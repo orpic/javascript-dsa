@@ -59,3 +59,43 @@ let full_linked_list_with_head_and_tail = {
   },
   tail: last_node,
 };
+
+// ---------------------------------------
+// ---------------------------------------
+// Creating a node with constructor
+
+class Node {
+  constructor(value) {
+    (this.value = value), (this.next = null);
+  }
+}
+
+// the actual creation of a node with the help of above class + constructor
+const newNode = new Node(4);
+
+// Now we can create a node, we want to create a Linked List
+
+class LinkedList {
+  constructor(value) {
+    // create a new node
+    const newNode = new Node(value);
+    // now we need that head point to this new node
+    this.head = newNode;
+    // bring in that tail and point it to the same thing as head is pointing to
+    // we could do the this.tail = newNode, but a better way is the below one
+    this.tail = this.head;
+    // we keep track of the linked list
+    this.length = 1;
+  }
+}
+
+// Now when we create a new linked, we do it like the way below
+
+const myNewLinkedList = new LinkedList(4);
+
+// a linked list with single node
+//
+// head=> 4=>null
+// tail=> 4=>null
+// length = 1
+//
